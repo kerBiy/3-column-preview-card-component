@@ -1,0 +1,112 @@
+:root {
+    --clr-section-one: hsl(31, 77%, 52%);
+    --clr-section-two: hsl(184, 100%, 22%);
+    --clr-section-three: hsl(179, 100%, 13%);
+
+    --clr-natural-300: hsla(0, 0%, 100%, 0.75);
+    --clr-natural-200: hsl(0, 0%, 95%);
+
+    --ff-base: 'Lexend Deca', sans-serif;
+    --ff-accent: 'Big Shoulders Display', cursive;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--clr-natural-200);
+    height: 100%;
+    padding: 100px 20px;
+
+    line-height: 1.5;
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    color: var(--clr-natural-300);
+    font-size: 1rem;
+}
+
+.wrapper {
+    display: grid;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@media (min-width: 600px){
+    body {
+        height: 100vh;
+        padding: 0;
+
+        display: grid;
+        place-content: center;
+    }
+
+    .wrapper{
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1000px;
+    }
+}
+
+.section {
+    display: grid;
+    gap: 1.5rem;
+    padding: 3rem;
+}
+
+.section[data-bgcolor="one"] {
+    background-color: var(--clr-section-one);
+}
+.section[data-bgcolor="two"] {
+    background-color: var(--clr-section-two);
+}
+.section[data-bgcolor="three"] {
+    background-color: var(--clr-section-three);
+}
+
+.title {
+    font-family: var(--ff-accent);
+    color: var(--clr-natural-200);
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.button {
+    max-width: 65%;
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    font-weight: var(--fw-bold);
+    transition: all .15s;
+}
+
+.button[data-color="one"]{
+    color: var(--clr-section-one);
+}
+.button[data-color="two"]{
+    color: var(--clr-section-two);
+}
+.button[data-color="three"]{
+    color: var(--clr-section-three);
+}
+
+.button:hover {
+    color: var(--clr-natural-200);
+    background-color: transparent;
+    outline: 2px solid white;
+    cursor: pointer;
+}
